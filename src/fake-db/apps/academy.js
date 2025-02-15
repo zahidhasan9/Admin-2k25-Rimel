@@ -1,4 +1,4 @@
-export const db = {
+const db = {
   courses: [
     {
       id: 1,
@@ -540,3 +540,4 @@ export const db = {
     ]
   }
 }
+export default db

@@ -5,7 +5,8 @@ import AcademyMyCourse from '@/views/apps/academy/my-courses'
 import { getServerMode } from '@core/utils/serverHelpers'
 
 // Data Imports
-import { getAcademyData } from '@/app/server/actions'
+// import { getAcademyData } from '@/app/server/actions'
+import getAcademyData from '@/fake-db/apps/academy'
 
 /**
  * ! If you need data using an API call, uncomment the below API code, update the `process.env.API_URL` variable in the
@@ -26,7 +27,8 @@ import { getAcademyData } from '@/app/server/actions'
 const MyCoursePage = async () => {
   // Vars
   const mode = await getServerMode()
-  const data = await getAcademyData()
+  // const data = await getAcademyData()
+  const data = getAcademyData
 
   return <AcademyMyCourse mode={mode} courseData={data?.courses} />
 }

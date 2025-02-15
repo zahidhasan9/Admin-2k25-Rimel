@@ -43,7 +43,6 @@ import CustomTextField from '@core/components/mui/TextField'
 
 // Util Imports
 import { getInitials } from '@/utils/getInitials'
-import { getLocalizedUrl } from '@/utils/i18n'
 
 // Style Imports
 import tableStyles from '@core/styles/table.module.css'
@@ -133,7 +132,7 @@ const InvoiceListTable = ({ invoiceData }) => {
         cell: ({ row }) => (
           <Typography
             component={Link}
-            href={getLocalizedUrl(`/apps/invoice/preview/${row.original.id}`, locale)}
+            href={`/apps/invoice/preview/${row.original.id}`}
             color='primary.main'
           >{`#${row.original.id}`}</Typography>
         )
@@ -206,7 +205,7 @@ const InvoiceListTable = ({ invoiceData }) => {
               <i className='tabler-trash text-textSecondary' />
             </IconButton>
             <IconButton>
-              <Link href={getLocalizedUrl(`/apps/invoice/preview/${row.original.id}`, locale)} className='flex'>
+              <Link href={`/apps/invoice/preview/${row.original.id}`} className='flex'>
                 <i className='tabler-eye text-textSecondary' />
               </Link>
             </IconButton>
@@ -222,7 +221,7 @@ const InvoiceListTable = ({ invoiceData }) => {
                 {
                   text: 'Edit',
                   icon: 'tabler-pencil',
-                  href: getLocalizedUrl(`/apps/invoice/edit/${row.original.id}`, locale),
+                  href: `/apps/invoice/edit/${row.original.id}`,
                   linkProps: {
                     className: 'flex items-center is-full plb-2 pli-4 gap-2 text-textSecondary'
                   }
@@ -317,7 +316,7 @@ const InvoiceListTable = ({ invoiceData }) => {
             variant='contained'
             component={Link}
             startIcon={<i className='tabler-plus' />}
-            href={getLocalizedUrl('apps/invoice/add', locale)}
+            href='apps/invoice/add'
             className='max-sm:is-full'
           >
             Create Invoice

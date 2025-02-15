@@ -14,9 +14,6 @@ import Button from '@mui/material/Button'
 import AddPaymentDrawer from '@views/apps/invoice/shared/AddPaymentDrawer'
 import SendInvoiceDrawer from '@views/apps/invoice/shared/SendInvoiceDrawer'
 
-// Util Imports
-import { getLocalizedUrl } from '@/utils/i18n'
-
 const PreviewActions = ({ id, onButtonClick }) => {
   // States
   const [paymentDrawerOpen, setPaymentDrawerOpen] = useState(false)
@@ -51,7 +48,7 @@ const PreviewActions = ({ id, onButtonClick }) => {
               color='secondary'
               variant='tonal'
               className='capitalize'
-              href={getLocalizedUrl(`/apps/invoice/edit/${id}`, locale)}
+              href={`/apps/invoice/edit/${id}`}
             >
               Edit
             </Button>

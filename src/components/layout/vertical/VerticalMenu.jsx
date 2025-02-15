@@ -121,32 +121,24 @@ const VerticalMenu = ({ scrollMenu }) => {
             <MenuItem href={`/apps/ecommerce/settings`}>Settings</MenuItem>
           </SubMenu>
           <SubMenu label={'academy'} icon={<i className='tabler-school' />}>
-            <MenuItem href={`/apps/academy/dashboard`}></MenuItem>
-            <MenuItem href={`/apps/academy/my-courses`}></MenuItem>
-            <MenuItem href={`/apps/academy/course-details`}></MenuItem>
+            <MenuItem href={`/apps/academy/dashboard`}>dashboard`</MenuItem>
+            <MenuItem href={`/apps/academy/my-courses`}>my-course</MenuItem>
+            <MenuItem href={`/apps/academy/course-details`}>course-details</MenuItem>
           </SubMenu>
           <SubMenu label={'logistics'} icon={<i className='tabler-truck' />}>
             <MenuItem href={`/apps/logistics/dashboard`}></MenuItem>
             <MenuItem href={`/apps/logistics/fleet`}></MenuItem>
           </SubMenu>
-          <MenuItem
-            href={`/apps/email`}
-            icon={<i className='tabler-mail' />}
-            exactMatch={false}
-            activeUrl='/apps/email'
-          ></MenuItem>
-          <MenuItem href={`/apps/chat`} icon={<i className='tabler-message-circle-2' />}></MenuItem>
-          <MenuItem href={`/apps/calendar`} icon={<i className='tabler-calendar' />}></MenuItem>
-          <MenuItem href={`/apps/kanban`} icon={<i className='tabler-copy' />}></MenuItem>
+
           <SubMenu label={'invoice'} icon={<i className='tabler-file-description' />}>
-            <MenuItem href={`/apps/invoice/list`}></MenuItem>
-            <MenuItem
-              href={`/apps/invoice/preview/4987`}
-              exactMatch={false}
-              activeUrl='/apps/invoice/preview'
-            ></MenuItem>
-            <MenuItem href={`/apps/invoice/edit/4987`} exactMatch={false} activeUrl='/apps/invoice/edit'></MenuItem>
-            <MenuItem href={`/apps/invoice/add`}></MenuItem>
+            <MenuItem href={`/apps/invoice/list`}>List</MenuItem>
+            <MenuItem href={`/apps/invoice/preview/4987`} exactMatch={false} activeUrl='/apps/invoice/preview'>
+              Details
+            </MenuItem>
+            <MenuItem href={`/apps/invoice/edit/4987`} exactMatch={false} activeUrl='/apps/invoice/edit'>
+              Edit
+            </MenuItem>
+            <MenuItem href={`/apps/invoice/add`}>Add</MenuItem>
           </SubMenu>
           <SubMenu label={'user'} icon={<i className='tabler-user' />}>
             <MenuItem href={`/apps/user/list`}></MenuItem>
@@ -223,22 +215,6 @@ const VerticalMenu = ({ scrollMenu }) => {
           </MenuItem>
           <MenuItem href={`/react-table`} icon={<i className='tabler-table' />}>
             React Table
-          </MenuItem>
-          <MenuItem
-            icon={<i className='tabler-checkbox' />}
-            href={`/docs/user-interface/form-elements`}
-            suffix={<i className='tabler-external-link text-xl' />}
-            target='_blank'
-          >
-            Tabler Checkbox
-          </MenuItem>
-          <MenuItem
-            icon={<i className='tabler-layout-board-split' />}
-            href={`${process.env.NEXT_PUBLIC_DOCS_URL}/docs/user-interface/mui-table`}
-            suffix={<i className='tabler-external-link text-xl' />}
-            target='_blank'
-          >
-            Tabler Layout
           </MenuItem>
         </MenuSection>
         <MenuSection label={'charts Misc'}>

@@ -22,9 +22,6 @@ import Typography from '@mui/material/Typography'
 // Component Imports
 import DirectionalIcon from '@components/DirectionalIcon'
 
-// Util Imports
-import { getLocalizedUrl } from '@/utils/i18n'
-
 const chipColor = {
   Web: { color: 'primary' },
   Art: { color: 'success' },
@@ -107,7 +104,7 @@ const Courses = props => {
               <Grid size={{ xs: 12, sm: 6, md: 4 }} key={index}>
                 <div className='border rounded bs-full'>
                   <div className='pli-2 pbs-2'>
-                    <Link href={getLocalizedUrl('/apps/academy/course-details', locale)} className='flex'>
+                    <Link href='/apps/academy/course-details' className='flex'>
                       <img src={item.tutorImg} alt={item.courseTitle} className='is-full' />
                     </Link>
                   </div>
@@ -124,7 +121,7 @@ const Courses = props => {
                       <Typography
                         variant='h5'
                         component={Link}
-                        href={getLocalizedUrl('/apps/academy/course-details', locale)}
+                        href='/apps/academy/course-details'
                         className='hover:text-primary'
                       >
                         {item.courseTitle}
@@ -155,7 +152,7 @@ const Courses = props => {
                         variant='tonal'
                         startIcon={<i className='tabler-rotate-clockwise-2' />}
                         component={Link}
-                        href={getLocalizedUrl('/apps/academy/course-details', locale)}
+                        href='/apps/academy/course-details'
                       >
                         Start Over
                       </Button>
@@ -167,7 +164,7 @@ const Courses = props => {
                           color='secondary'
                           startIcon={<i className='tabler-rotate-clockwise-2' />}
                           component={Link}
-                          href={getLocalizedUrl('/apps/academy/course-details', locale)}
+                          href='/apps/academy/course-details'
                           className='is-auto flex-auto'
                         >
                           Start Over
@@ -179,7 +176,7 @@ const Courses = props => {
                             <DirectionalIcon ltrIconClass='tabler-chevron-right' rtlIconClass='tabler-chevron-left' />
                           }
                           component={Link}
-                          href={getLocalizedUrl('/apps/academy/course-details', locale)}
+                          href='/apps/academy/course-details'
                           className='is-auto flex-auto'
                         >
                           Continue

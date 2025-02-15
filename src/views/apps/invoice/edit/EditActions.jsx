@@ -21,9 +21,6 @@ import AddPaymentDrawer from '@views/apps/invoice/shared/AddPaymentDrawer'
 import SendInvoiceDrawer from '@views/apps/invoice/shared/SendInvoiceDrawer'
 import CustomTextField from '@core/components/mui/TextField'
 
-// Util Imports
-import { getLocalizedUrl } from '@/utils/i18n'
-
 const EditActions = ({ id }) => {
   // States
   const [paymentDrawerOpen, setPaymentDrawerOpen] = useState(false)
@@ -53,7 +50,7 @@ const EditActions = ({ id }) => {
                 color='secondary'
                 variant='tonal'
                 className='capitalize'
-                href={getLocalizedUrl(`/apps/invoice/preview/${id}`, locale)}
+                href={`/apps/invoice/preview/${id}`}
               >
                 Preview
               </Button>
