@@ -5,7 +5,6 @@ import { useRef, useState } from 'react'
 
 // Next Imports
 import { usePathname } from 'next/navigation'
-import Link from 'next/link'
 
 // MUI Imports
 import Chip from '@mui/material/Chip'
@@ -27,11 +26,8 @@ import SkinDefault from '@core/svg/SkinDefault'
 import SkinBordered from '@core/svg/SkinBordered'
 import LayoutVertical from '@core/svg/LayoutVertical'
 import LayoutCollapsed from '@core/svg/LayoutCollapsed'
-import LayoutHorizontal from '@core/svg/LayoutHorizontal'
 import ContentCompact from '@core/svg/ContentCompact'
 import ContentWide from '@core/svg/ContentWide'
-import DirectionLtr from '@core/svg/DirectionLtr'
-import DirectionRtl from '@core/svg/DirectionRtl'
 
 // Config Imports
 import primaryColorConfig from '@configs/primaryColorConfig'
@@ -41,15 +37,6 @@ import { useSettings } from '@core/hooks/useSettings'
 
 // Style Imports
 import styles from './styles.module.css'
-
-const getLocalePath = (pathName, locale) => {
-  if (!pathName) return '/'
-  const segments = pathName.split('/')
-
-  segments[1] = locale
-
-  return segments.join('/')
-}
 
 const DebouncedColorPicker = props => {
   // Props
@@ -332,7 +319,7 @@ const Customizer = ({ breakpoint = 'lg', dir = 'ltr', disableDirection = false }
               <Chip label='Layout' variant='tonal' size='small' color='primary' className='self-start rounded-sm' />
               <div className='flex flex-col gap-2'>
                 <p className='font-medium'>Layouts</p>
-                <div className='flex items-center justify-between'>
+                <div className='flex items-center justify-start gap-x-5'>
                   <div className='flex flex-col items-start gap-0.5'>
                     <div
                       className={classnames(styles.itemWrapper, { [styles.active]: settings.layout === 'vertical' })}
@@ -353,17 +340,6 @@ const Customizer = ({ breakpoint = 'lg', dir = 'ltr', disableDirection = false }
                     </div>
                     <p className={styles.itemLabel} onClick={() => handleChange('layout', 'collapsed')}>
                       Collapsed
-                    </p>
-                  </div>
-                  <div className='flex flex-col items-start gap-0.5'>
-                    <div
-                      className={classnames(styles.itemWrapper, { [styles.active]: settings.layout === 'horizontal' })}
-                      onClick={() => handleChange('layout', 'horizontal')}
-                    >
-                      <LayoutHorizontal />
-                    </div>
-                    <p className={styles.itemLabel} onClick={() => handleChange('layout', 'horizontal')}>
-                      Horizontal
                     </p>
                   </div>
                 </div>
@@ -419,43 +395,6 @@ const Customizer = ({ breakpoint = 'lg', dir = 'ltr', disableDirection = false }
                   </div>
                 </div>
               </div>
-              {!disableDirection && (
-                <div className='flex flex-col gap-2'>
-                  <p className='font-medium'>Direction</p>
-                  <div className='flex items-center gap-4'>
-                    <Link href={getLocalePath(pathName, 'en')}>
-                      <div className='flex flex-col items-start gap-0.5'>
-                        <div
-                          className={classnames(styles.itemWrapper, {
-                            [styles.active]: direction === 'ltr'
-                          })}
-                        >
-                          <DirectionLtr />
-                        </div>
-                        <p className={styles.itemLabel}>
-                          Left to Right <br />
-                          (English)
-                        </p>
-                      </div>
-                    </Link>
-                    <Link href={getLocalePath(pathName, 'ar')}>
-                      <div className='flex flex-col items-start gap-0.5'>
-                        <div
-                          className={classnames(styles.itemWrapper, {
-                            [styles.active]: direction === 'rtl'
-                          })}
-                        >
-                          <DirectionRtl />
-                        </div>
-                        <p className={styles.itemLabel}>
-                          Right to Left <br />
-                          (Arabic)
-                        </p>
-                      </div>
-                    </Link>
-                  </div>
-                </div>
-              )}
             </div>
           </div>
         </ScrollWrapper>
