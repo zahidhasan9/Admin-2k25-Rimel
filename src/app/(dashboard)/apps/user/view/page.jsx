@@ -9,7 +9,8 @@ import UserLeftOverview from '@views/apps/user/view/user-left-overview'
 import UserRight from '@views/apps/user/view/user-right'
 
 // Data Imports
-import { getPricingData } from '@/app/server/actions'
+// import { getPricingData } from '@/app/server/actions'
+import getPricingData from '@/fake-db/pages/pricing'
 
 const OverViewTab = dynamic(() => import('@views/apps/user/view/user-right/overview'))
 const SecurityTab = dynamic(() => import('@views/apps/user/view/user-right/security'))
@@ -44,7 +45,8 @@ const tabContentList = data => ({
 } */
 const UserViewTab = async () => {
   // Vars
-  const data = await getPricingData()
+  // const data = await getPricingData()
+  const data = getPricingData
 
   return (
     <Grid container spacing={6}>

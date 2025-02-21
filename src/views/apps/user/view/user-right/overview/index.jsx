@@ -7,7 +7,8 @@ import UserActivityTimeLine from './UserActivityTimeline'
 import InvoiceListTable from './InvoiceListTable'
 
 // Data Imports
-import { getInvoiceData } from '@/app/server/actions'
+// import { getInvoiceData } from '@/app/server/actions'
+import getInvoiceData from '@/fake-db/apps/invoice'
 
 /**
  * ! If you need data using an API call, uncomment the below API code, update the `process.env.API_URL` variable in the
@@ -26,7 +27,8 @@ import { getInvoiceData } from '@/app/server/actions'
 } */
 const OverViewTab = async () => {
   // Vars
-  const invoiceData = await getInvoiceData()
+  // const invoiceData = await getInvoiceData()
+  const invoiceData = getInvoiceData
 
   return (
     <Grid container spacing={6}>

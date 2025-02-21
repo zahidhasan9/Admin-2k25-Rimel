@@ -3,9 +3,6 @@
 // React Imports
 import { useRef, useState } from 'react'
 
-// Next Imports
-import { usePathname } from 'next/navigation'
-
 // MUI Imports
 import Chip from '@mui/material/Chip'
 import Fade from '@mui/material/Fade'
@@ -65,10 +62,9 @@ const DebouncedColorPicker = props => {
   )
 }
 
-const Customizer = ({ breakpoint = 'lg', dir = 'ltr', disableDirection = false }) => {
+const Customizer = ({ breakpoint = 'lg' }) => {
   // States
   const [isOpen, setIsOpen] = useState(false)
-  const [direction, setDirection] = useState(dir)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   // Refs
@@ -76,7 +72,6 @@ const Customizer = ({ breakpoint = 'lg', dir = 'ltr', disableDirection = false }
 
   // Hooks
   const theme = useTheme()
-  const pathName = usePathname()
   const { settings, updateSettings, resetSettings, isSettingsChanged } = useSettings()
   const isSystemDark = useMedia('(prefers-color-scheme: dark)', false)
 
